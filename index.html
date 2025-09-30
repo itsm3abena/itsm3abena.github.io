@@ -136,7 +136,7 @@
                             </div>
                             <div class="skills-list">
                                 <span>PyQt</span>
-                                <span>Vue</span>
+                                <span>React</span>
                                 <span>Pyside</span>
                                 <span>Angular</span>
                                 <span>Spring</span>
@@ -147,7 +147,7 @@
                                 <h3>Database</h3>
                             </div>
                             <div class="skills-list">
-                                <span>MySQL</span>
+                                <span>SQL</span>
                                 <span>MongoDB</span>
                             </div>
                         </div>
@@ -158,27 +158,77 @@
             <!-- -------------- PROJECT BOX ---------------- -->
 
             <section class="section" id="projects">
-                <div class="top-header">
-                    <h1>Projects</h1>
-                </div>
-                <div class="project-container">
-                    <div class="project-box">
-                        <i class="uil uil-briefcase-alt"></i>
-                        <h3>Completed</h3>
-                        <label>5+ Finished Projects</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="uil uil-users-alt"></i>
-                        <h3>Clients</h3>
-                        <label>5+ Happy Clients</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="uil uil-award"></i>
-                        <h3>Experience</h3>
-                        <label>1+ Years in the field</label>
-                    </div>
-                </div>
+              <div class="top-header">
+                <h1>Projects</h1>
+                <span>Selected work across backend, desktop, and systems programming</span>
+              </div>
+
+              <div class="projects-grid">
+                <!-- Openprofit Backend -->
+                <article class="project-card">
+                  <h3 class="card-title">Openprofit Backend</h3>
+                  <p class="card-desc">
+                    REST services for HD wallet creation, derivation, signing, and balances; production-ready auth and testing.
+                  </p>
+                  <div class="card-tags">
+                    <span>Built REST APIs</span><span>Supabase auth/RLS</span><span>Realtime triggers</span><span>OpenAPI docs</span><span>90%+ tests</span>
+                  </div>
+                </article>
+
+                <!-- HD Wallet Suite -->
+                <article class="project-card">
+                  <h3 class="card-title">HD Wallet Suite</h3>
+                  <p class="card-desc">
+                    Python & TypeScript HD-wallet toolchain for 200+ cryptocurrencies with a cross-platform desktop app.
+                  </p>
+                  <div class="card-tags">
+                    <span>Core wallet lib</span><span>Desktop UI (PySide)</span><span>Responsive web app</span><span>Unit & regression</span><span>Dev docs</span>
+                  </div>
+                  <div class="card-links">
+                    <a class="card-cta" href="https://github.com/hdwallet-io/python-hdwallet" target="_blank" rel="noopener">Python lib</a>
+                    <a class="card-cta" href="https://github.com/talonlab/hdwallet-desktop" target="_blank" rel="noopener">Desktop app</a>
+                    <a class="card-cta" href="https://github.com/hdwallet-io/hdwallet.js" target="_blank" rel="noopener">JS/TS lib</a>
+                  </div>
+                </article>
+
+                <!-- BIP38 Client -->
+                <article class="project-card">
+                  <h3 class="card-title">BIP38 Client</h3>
+                  <p class="card-desc">
+                    Cross-platform desktop app powered by a BIP38 library (supports both EC-multiply & non-EC-multiply modes).
+                  </p>
+                  <div class="card-tags">
+                    <span>BIP38 spec</span><span>Key encryption</span><span>Desktop UX</span><span>Cross-platform</span>
+                  </div>
+                  <div class="card-links">
+                    <a class="card-cta" href="https://github.com/talonlab/bip38-desktop" target="_blank" rel="noopener">Desktop app</a>
+                  </div>
+                </article>
+
+
+                <!-- Hospital Management System -->
+                <article class="project-card">
+                  <h3 class="card-title">Hospital Management System</h3>
+                  <p class="card-desc">
+                    Feature development and maintenance for Gotmeri PLC on a scalable Spring Boot codebase.
+                  </p>
+                  <div class="card-tags">
+                    <span>Spring services</span><span>Client delivery</span><span>Maintenance</span>
+                  </div>
+                </article>
+
+                <!-- ClowRast – Personal -->
+                <article class="project-card">
+                  <h3 class="card-title">ClowRast (Personal)</h3>
+                  <p class="card-desc">
+                    I designed and wrote a C11 software rasterizer with perspective-correct texturing, z-buffering, and complex model loading—profiling for real-time performance.
+                  </p>
+                </article>
+              </div>
             </section>
+
+
+
 
             <!-- -------------- CONTACT BOX ---------------- -->
 
@@ -237,14 +287,17 @@
                 </ul>
             </div>
             <div class="footer-social-icons">
-                <div class="icon"><i class="uil uil-instagram"></i></div>
-                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-                <div class="icon"><i class="uil uil-dribbble"></i></div>
-                <div class="icon"><i class="uil uil-github-alt"></i></div>
+              <a class="icon" href="https://www.linkedin.com/in/itsm3abena" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a class="icon" href="https://github.com/itsm3abena" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="uil uil-github-alt"></i>
+              </a>
+              <a class="icon" href="https://t.me/itsm3abena" target="_blank" rel="noopener" aria-label="Telegram">
+                <i class="uil uil-telegram-alt"></i>
+              </a>
             </div>
-            <div class="bottom-footer">
-                <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Amikingo</a> - All rights reserved</p>
-            </div>
+
         </footer>
 
     </div>
@@ -261,9 +314,9 @@
             });
         }
 
-        addDownloadListener('downloadBtn', 'assets/files/Abenezer_Final2.pdf');
-        addDownloadListener('downloadBtnHome', 'assets/files/Abenezer_Final2.pdf');
-        addDownloadListener('downloadBtnAbout', 'assets/files/Abenezer_Final2.pdf');
+        addDownloadListener('downloadBtn', 'assets/files/Abenezer_Lulseged_CV.pdf');
+        addDownloadListener('downloadBtnHome', 'assets/files/Abenezer_Lulseged_CV.pdf');
+        addDownloadListener('downloadBtnAbout', 'assets/files/Abenezer_Lulseged_CV.pdf');
     </script>
 
 
