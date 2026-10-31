@@ -1013,3 +1013,12 @@ body.cv-open { overflow: hidden; }
 .more-wrap.open .more-inner { overflow: visible; }
 .projects-more { padding-top: 14px; }
 .more-wrap:not(.open) .projects-more { visibility: hidden; }
+
+/* hero: GitHub links on the bottom strip */
+.hero-orange .barcode, .hero-orange .code { color: var(--ink); }
+.hero-orange .barcode .tiny { transition: opacity .2s; }
+.hero-orange .barcode svg { transition: transform .4s var(--ease-out); }
+.hero-orange .barcode:hover svg { transform: scaleY(1.12); }
+.hero-orange .barcode:hover .tiny { text-decoration: underline; text-underline-offset: .15em; }
+.hero-orange .code:hover { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .12em; }
+.hero-orange .barcode:focus-visible, .hero-orange .code:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
