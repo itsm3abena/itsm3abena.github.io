@@ -1,0 +1,13 @@
+{
+  "name": "itsm3abena-github-io",
+  "private": true,
+  "description": "Portfolio of Abenezer Lulseged Wube — static site",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html assets dist/",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

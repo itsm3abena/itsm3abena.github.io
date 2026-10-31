@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers config: the site is served as static assets, no Worker script.
+  // Build step (Cloudflare "Build command" or `npm run build`) copies only the site files into dist/.
+  "$schema": "https://developers.cloudflare.com/schemas/wrangler.json",
+  "name": "itsm3abena-github-io",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
