@@ -8,5 +8,11 @@
     "directory": "./dist",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
-  }
+  },
+  // Custom domains: the abenezer.dev zone must be on this Cloudflare account.
+  // On deploy, Wrangler creates the DNS records and TLS certificates for these.
+  "routes": [
+    { "pattern": "abenezer.dev", "custom_domain": true },
+    { "pattern": "www.abenezer.dev", "custom_domain": true }
+  ]
 }
