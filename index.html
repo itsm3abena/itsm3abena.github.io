@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abenezer Lulseged Wube — backend engineer and full stack developer. FastAPI services, HD-wallet tooling, desktop apps and systems programming.">
+    <meta name="theme-color" content="#000000">
 
     <!-- --------- UNICONS ---------- -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -12,256 +14,377 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- --------- FAVICON ---------- -->
-    <link rel="shortcut icon" href="assets/images/" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
 
     <title>Abenezer.L - Portfolio</title>
 </head>
 
 <body>
+    <!-- --------------- SHARED SVG SYMBOLS --------------- -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <!-- heavy ↗ arrow -->
+            <symbol id="i-arrow" viewBox="0 0 100 100">
+                <path fill="currentColor" d="M0 82 82 0 100 18 18 100Z M30 0H100V70H78V22H30Z"/>
+            </symbol>
+            <!-- two slanted bars -->
+            <symbol id="i-bars" viewBox="0 0 70 26">
+                <path fill="currentColor" d="M10 0h24L24 26H0Z M46 0h24L60 26H36Z"/>
+            </symbol>
+            <!-- CE mark -->
+            <symbol id="i-ce" viewBox="0 0 54 40">
+                <path fill="none" stroke="currentColor" stroke-width="5" d="M24 5A15 15 0 1 0 24 35 M50 5A15 15 0 1 0 50 35 M31 20h14"/>
+            </symbol>
+            <!-- aperture dial -->
+            <symbol id="i-dial" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/>
+                <g stroke="currentColor" stroke-width="2.5" fill="none">
+                    <path d="M24 3v42M3 24h42M9.2 9.2l29.6 29.6M38.8 9.2 9.2 38.8"/>
+                </g>
+                <circle cx="24" cy="24" r="6" fill="currentColor"/>
+            </symbol>
+            <!-- globe / half disc -->
+            <symbol id="i-disc" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <path fill="currentColor" d="M12 2a10 10 0 0 1 0 20Z"/>
+            </symbol>
+            <!-- pie markers -->
+            <symbol id="i-pie-0" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            </symbol>
+            <symbol id="i-pie-75" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <path fill="currentColor" d="M12 12V1.5A10.5 10.5 0 1 1 1.5 12Z"/>
+            </symbol>
+            <symbol id="i-pie-50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <path fill="currentColor" d="M12 1.5a10.5 10.5 0 0 1 0 21Z"/>
+            </symbol>
+        </defs>
+    </svg>
+
     <div class="container">
         <!-- --------------- HEADER --------------- -->
         <nav id="header">
-            <div class="nav-logo">
+            <a class="nav-logo" href="#home" aria-label="Abenezer.L — home">
                 <p class="nav-name">Abenezer.L</p>
-                <span> </span>
-            </div>
+                <span class="nav-dot"></span>
+                <span class="sub">Portfolio / 2026</span>
+            </a>
             <div class="nav-menu" id="myNavMenu">
                 <ul class="nav_menu_list">
-                    <li class="nav_list">
-                        <a href="#home" class="nav-link active-link">Home</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#about" class="nav-link">About</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#projects" class="nav-link">Projects</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#contact" class="nav-link">Contact</a>
-                        <div class="circle"></div>
-                    </li>
+                    <li class="nav_list"><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li class="nav_list"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav_list"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav_list"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
             <div class="nav-button">
-                <button id="downloadBtn" class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+                <a id="downloadBtn" class="btn" href="assets/files/Abenezer_Lulseged_CV.pdf" download>Download CV <svg class="arr"><use href="#i-arrow"/></svg></a>
             </div>
             <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+                <button type="button" aria-label="Toggle menu" aria-controls="myNavMenu" onclick="myMenuFunction()"><i class="uil uil-bars"></i></button>
             </div>
         </nav>
 
 
         <!-- -------------- MAIN ---------------- -->
         <main class="wrapper">
-            <!-- -------------- FEATURED BOX ---------------- -->
+            <!-- -------------- HERO BENTO ---------------- -->
             <section class="featured-box" id="home">
-                <div class="featured-text">
-                    <div class="featured-text-card">
-                        <span>Abenezer.L</span>
-                    </div>
-                    <div class="featured-name">
-                        <p>I'm <span class="typedText"></span></p>
-                    </div>
-                    <div class="featured-text-info">
-                        <p>Experienced Full stack developer with a passion for developing things.
-                        </p>
-                    </div>
-                    <div class="featured-text-btn">
-                        <!-- <button class="btn blue-btn">Hire Me</button> -->
-                        <button id="downloadBtnHome" class="btn">Download CV <i class="uil uil-file-alt"></i></button>
-                    </div>
-                    <div class="social_icons">
-                        <div class="icon">
-                            <a href="https://discord.com/itsm3abena"><i class="uil uil-discord"></i></a>
+                <div class="bento">
+
+                    <!-- 01 — RED / PORTRAIT -->
+                    <article class="card c-red hero-red" aria-label="Portrait">
+                        <span class="corner-tl">01</span>
+                        <span class="corner-tr">Backend Eng.<br>Addis Ababa</span>
+                        <div class="portrait">
+                            <img src="assets/images/portrait-cutout.png" alt="Abenezer Lulseged" width="433" height="426">
                         </div>
-                        <div class="icon">
-                            <a href="https://x.com/itsm3abena"><i class="uil uil-twitter"></i></a>
+                        <span class="jp" lang="ja" title="独創 — originality">独創</span>
+                        <span class="pill" aria-hidden="true"></span>
+                    </article>
+
+                    <!-- 02 — ORANGE / SPEC LABEL -->
+                    <article class="card c-orange hero-orange" aria-label="Spec sheet">
+                        <div class="row-top">
+                            <h1 class="name">Abenezer<span class="dot" aria-hidden="true"></span></h1>
+                            <a class="arrow" href="#projects" aria-label="Jump to projects"><svg><use href="#i-arrow"/></svg></a>
                         </div>
-                        <div class="icon">
-                            <a href="https://t.me/itsm3abena"><i class="uil uil-telegram"></i></a>
+
+                        <div class="row-mid">
+                            <!-- ADSR-style focus bars -->
+                            <div class="box adsr" aria-label="Focus: backend, frontend, desktop, systems">
+                                <div class="bars">
+                                    <span class="bar" style="--f:58%" title="Backend"></span>
+                                    <span class="bar" style="--f:34%" title="Frontend"></span>
+                                    <span class="bar" style="--f:96%" title="Desktop"></span>
+                                    <span class="bar" style="--f:96%" title="Systems"></span>
+                                </div>
+                                <div class="labels"><span>B</span><span>F</span><span>D</span><span>S</span></div>
+                            </div>
+
+                            <!-- UA 570-B panel -->
+                            <div class="box spec">
+                                <div class="hd"><b>Backend engineer</b><span class="dim">/ Full stack developer</span></div>
+                                <div class="bd">
+                                    <div class="rows">
+                                        <div class="spec-row">
+                                            <span class="k">Languages<small>C to TypeScript</small></span>
+                                            <span class="tri" aria-hidden="true"></span>
+                                            <span class="v">09</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <span class="k">Frameworks<small>libs &amp; stacks</small></span>
+                                            <span class="tri" aria-hidden="true"></span>
+                                            <span class="v">07</span>
+                                        </div>
+                                    </div>
+                                    <div class="gauges" aria-hidden="true">
+                                        <div class="gauge"><span>CI</span>
+                                            <svg viewBox="0 0 12 60" preserveAspectRatio="none"><path stroke="currentColor" stroke-width="1.4" d="M6 0v60M0 2h6M3 10h3M3 18h3M0 26h6M3 34h3M3 42h3M0 50h6M3 58h3"/></svg>
+                                        </div>
+                                        <div class="gauge"><span>K8s</span>
+                                            <svg viewBox="0 0 12 60" preserveAspectRatio="none"><rect x="3" y="2" width="6" height="56" fill="currentColor"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="blurb jobs" aria-label="Experience">
+                                <li><span class="role">Backend Engineer</span><span class="co">Quyoom Technology</span><span class="when">2025 – 26</span></li>
+                                <li><span class="role">Developer</span><span class="co">Talon Lab</span><span class="when">2024 – now</span></li>
+                                <li><span class="role">Backend Developer</span><span class="co">Openprofit</span><span class="when">2025</span></li>
+                                <li><span class="role">Desktop App Dev</span><span class="co">Gotmeri PLC</span><span class="when">2023</span></li>
+                            </ul>
                         </div>
-                        <div class="icon">
-                            <a href="https://github.com/itsm3abena"><i class="uil uil-github-alt"> </i></a>
+
+                        <div class="row-bot">
+                            <span class="code">#ITSM3ABENA</span>
+                            <span class="barcode" aria-hidden="true">
+                                <svg viewBox="0 0 90 24" fill="currentColor"><rect x="0" width="1" height="24"/><rect x="3" width="2" height="24"/><rect x="6" width="1" height="24"/><rect x="9" width="2" height="24"/><rect x="13" width="2" height="24"/><rect x="16" width="2" height="24"/><rect x="19" width="2" height="24"/><rect x="22" width="2" height="24"/><rect x="25" width="1" height="24"/><rect x="28" width="2" height="24"/><rect x="32" width="2" height="24"/><rect x="35" width="2" height="24"/><rect x="39" width="1" height="24"/><rect x="41" width="3" height="24"/><rect x="45" width="2" height="24"/><rect x="48" width="3" height="24"/><rect x="52" width="3" height="24"/><rect x="56" width="1" height="24"/><rect x="59" width="1" height="24"/><rect x="61" width="1" height="24"/><rect x="63" width="2" height="24"/><rect x="67" width="3" height="24"/><rect x="71" width="3" height="24"/><rect x="75" width="2" height="24"/><rect x="79" width="2" height="24"/><rect x="82" width="1" height="24"/><rect x="84" width="1" height="24"/><rect x="86" width="1" height="24"/><rect x="88" width="1" height="24"/></svg>
+                                <span class="tiny">GITHUB<br>ITSM3ABENA</span>
+                            </span>
+                            <span class="corp">Abena.<span class="mini">2026</span><svg><use href="#i-disc"/></svg></span>
+                            <span class="pies" aria-hidden="true">
+                                <svg><use href="#i-pie-0"/></svg>
+                                <svg><use href="#i-pie-75"/></svg>
+                                <svg><use href="#i-pie-50"/></svg>
+                            </span>
                         </div>
-                    </div>
-                </div>
-                <div class="featured-image">
-                    <div class="image">
-                        <img src="assets/images/abcd.png" alt="avatar">
-                    </div>
-                </div>
-                <div class="scroll-icon-box">
-                    <a href="#about" class="scroll-btn">
-                        <i class="uil uil-mouse-alt"></i>
-                        <p>Scroll Down</p>
+                    </article>
+
+                    <!-- 03 — GREEN / CV CARD -->
+                    <a class="card c-green hero-green" id="downloadBtnHome" href="assets/files/Abenezer_Lulseged_CV.pdf" download aria-label="Download CV (PDF)">
+                        <span></span>
+                        <div class="sys"><span>Dev Systm</span><svg aria-hidden="true"><use href="#i-ce"/></svg></div>
+                        <div class="mid">
+                            <div class="lines">Backend<br>Desktop apps<br>Systems</div>
+                            <div class="right"><span>©2026</span><span class="toggle" aria-hidden="true"></span></div>
+                        </div>
+                        <div class="big"><strong>CV26</strong><svg aria-hidden="true"><use href="#i-dial"/></svg></div>
                     </a>
-                </div>
 
+                    <!-- 04 — GREY / PROJECT COUNT -->
+                    <a class="card c-grey hero-grey" href="#projects" aria-label="Six selected projects">
+                        <svg class="glyph" aria-hidden="true"><use href="#i-bars"/></svg>
+                        <div class="lead">Selected<br>projects</div>
+                        <div class="num">0<span class="r">6</span><sup>R</sup></div>
+                    </a>
+
+                </div>
             </section>
-            <!-- -------------- ABOUT BOX ---------------- -->
+
+            <!-- -------------- ABOUT ---------------- -->
             <section class="section" id="about">
-                <div class="top-header">
-                    <h1>About Me</h1>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="about-info">
-                            <h3>My introduction</h3>
-                            <p>I am well-versed in Python and Java, and other cutting edge frameworks and libraries,which allows me to implement interactive features. Additionally, I have experirence working with
-                            </p>
-                            <div class="about-btn">
-                                <button id="downloadBtnAbout" class="btn">Download CV <i class="uil uil-import"></i></button>
+                <header class="sec-head">
+                    <span class="idx">02</span>
+                    <h2>About</h2>
+                    <span class="meta">Profile / UA 570-B</span>
+                </header>
+
+                <div class="about-grid">
+                    <article class="card c-orange about-intro">
+                        <div class="card-top"><span>My introduction</span><span>Rev. 2026</span></div>
+                        <div>
+                            <h3 class="card-title">Backend first,<br>full stack<br>by trade.</h3>
+                            <p style="margin-top:18px">I'm Abenezer Lulseged Wube, a backend engineer and full stack developer from Addis Ababa. I design REST APIs and event-driven services in Python (FastAPI, Kafka), build cross-platform desktop apps with Qt and PySide, and ship them with Docker, Kubernetes and CI/CD. Since 2024 I've been a developer at Talon Lab working on HD-wallet and BIP38 tooling, and I keep a C11 software rasterizer alive on the side.</p>
+                            <div class="ledger" style="margin-top:20px">
+                                <div class="row"><span><b>Admas University</b> — BSc, Computer Science</span><em>2019 – 2023</em></div>
+                                <div class="row"><span><b>Cisco Networking Academy</b> — Cybersecurity, course certificate</span><em>Cert.</em></div>
+                                <div class="row"><span><b>Languages</b> — English (proficient), Amharic (native)</span><em>EN / AM</em></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Programming Languages</h3>
+                        <div class="foot">
+                            <div class="stats">
+                                <div class="spec-row"><span class="k">Languages</span><span class="tri"></span><span class="v">09</span></div>
+                                <div class="spec-row"><span class="k">Frameworks</span><span class="tri"></span><span class="v">07</span></div>
+                                <div class="spec-row"><span class="k">DevOps</span><span class="tri"></span><span class="v">05</span></div>
                             </div>
+                            <a id="downloadBtnAbout" class="btn ink" href="assets/files/Abenezer_Lulseged_CV.pdf" download>Download CV <svg class="arr"><use href="#i-arrow"/></svg></a>
+                        </div>
+                    </article>
+
+                    <div class="skills-col">
+                        <div class="card c-green skills-box">
+                            <div class="skills-header"><h3>Programming Languages</h3><small>09</small></div>
                             <div class="skills-list">
-                                <span>C</span>
-                                <span>C++</span>
-                                <span>JavaScript</span>
-                                <span>Python</span>
-                                <span>Java</span>
+                                <span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">Go</span><span class="chip">Java</span><span class="chip">PHP</span><span class="chip">C#</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
                             </div>
                         </div>
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Frameworks/Libraries</h3>
-                            </div>
+                        <div class="card c-grey skills-box">
+                            <div class="skills-header"><h3>Frameworks / Libraries</h3><small>07</small></div>
                             <div class="skills-list">
-                                <span>PyQt</span>
-                                <span>React</span>
-                                <span>Fastapi</span>
-                                <span>Angular</span>
-                                <span>Spring</span>
+                                <span class="chip">FastAPI</span><span class="chip">Qt</span><span class="chip">PySide / PyQt</span><span class="chip">PyTest</span><span class="chip">Angular</span><span class="chip">React</span><span class="chip">ExpressJS</span>
                             </div>
                         </div>
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Database</h3>
-                            </div>
+                        <div class="card c-red skills-box">
+                            <div class="skills-header"><h3>DevOps / Testing / APIs</h3><small>08</small></div>
                             <div class="skills-list">
-                                <span>SQL</span>
-                                <span>MongoDB</span>
+                                <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">CI/CD</span><span class="chip">Unit tests</span><span class="chip">Regression tests</span><span class="chip">RESTful APIs</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- -------------- PROJECT BOX ---------------- -->
-
+            <!-- -------------- PROJECTS ---------------- -->
             <section class="section" id="projects">
-              <div class="top-header">
-                <h1>Projects</h1>
-                <span>Selected work across backend, desktop, and systems programming</span>
-              </div>
+                <header class="sec-head">
+                    <span class="idx">03</span>
+                    <h2>Projects</h2>
+                    <span class="meta">Experience / Backend / Desktop / Systems</span>
+                </header>
 
-              <div class="projects-grid">
-                <!-- Openprofit Backend -->
-                <article class="project-card">
-                  <h3 class="card-title">Openprofit Backend</h3>
-                  <p class="card-desc">
-                    REST services for HD wallet creation, derivation, signing, and balances; production-ready auth and testing.
-                  </p>
-                  <div class="card-tags">
-                    <span>Built REST APIs</span><span>Supabase auth/RLS</span><span>Realtime triggers</span><span>OpenAPI docs</span><span>90%+ tests</span>
-                  </div>
-                </article>
+                <div class="projects-grid">
+                    <!-- Cabreen Rides -->
+                    <article class="card c-orange project-card span-2">
+                        <div class="card-top"><span>01 — Backend Engineer · Quyoom Technology</span><span>Aug 2025 – 2026</span></div>
+                        <h3 class="card-title">Cabreen Rides</h3>
+                        <div>
+                            <p class="card-desc">Backend for a ride-hailing platform supporting instant, manual and shared rides. Real-time driver matching, trip lifecycle, fare computation and state sync over Ably and Kafka, with event-driven microservices, role-based access control, retries and circuit breakers around third-party services.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">FastAPI</span><span class="chip">Kafka</span><span class="chip">Ably</span><span class="chip">Microservices</span><span class="chip">Razorpay</span><span class="chip">MSG91</span><span class="chip">OneSignal</span><span class="chip">RBAC</span>
+                            </div>
+                        </div>
+                        <div class="card-links"><span class="serial">#CBR-RIDES</span><span class="serial">Production</span></div>
+                    </article>
 
-                <!-- HD Wallet Suite -->
-                <article class="project-card">
-                  <h3 class="card-title">HD Wallet Suite</h3>
-                  <p class="card-desc">
-                    Python & TypeScript HD-wallet toolchain for 200+ cryptocurrencies with a cross-platform desktop app.
-                  </p>
-                  <div class="card-tags">
-                    <span>Core wallet lib</span><span>Desktop UI (PySide)</span><span>Responsive web app</span><span>Unit & regression</span><span>Dev docs</span>
-                  </div>
-                  <div class="card-links">
-                    <a class="card-cta" href="https://github.com/hdwallet-io/python-hdwallet" target="_blank" rel="noopener">Python lib</a>
-                    <a class="card-cta" href="https://github.com/talonlab/hdwallet-desktop" target="_blank" rel="noopener">Desktop app</a>
-                    <a class="card-cta" href="https://github.com/hdwallet-io/hdwallet.js" target="_blank" rel="noopener">JS/TS lib</a>
-                  </div>
-                </article>
+                    <!-- HD Wallet Suite -->
+                    <article class="card c-green project-card">
+                        <div class="card-top"><span>02 — Developer · Talon Lab</span><span>Apr 2024 – Present</span></div>
+                        <h3 class="card-title">HD Wallet Suite</h3>
+                        <div>
+                            <p class="card-desc">Python library for hierarchical deterministic wallets across 200+ cryptocurrencies, plus a desktop app and a responsive web app built on it. Unit and regression tested, with developer docs.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">Python</span><span class="chip">Desktop UI</span><span class="chip">Web app</span><span class="chip">Docs</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <div class="links">
+                                <a class="btn outline-ink card-cta" href="https://github.com/hdwallet-io/python-hdwallet" target="_blank" rel="noopener">Python lib <svg class="arr"><use href="#i-arrow"/></svg></a>
+                                <a class="btn outline-ink card-cta" href="https://github.com/talonlab/hdwallet-desktop" target="_blank" rel="noopener">Desktop <svg class="arr"><use href="#i-arrow"/></svg></a>
+                                <a class="btn outline-ink card-cta" href="https://github.com/hdwallet-io/hdwallet.js" target="_blank" rel="noopener">JS/TS <svg class="arr"><use href="#i-arrow"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- BIP38 Client -->
-                <article class="project-card">
-                  <h3 class="card-title">BIP38 Client</h3>
-                  <p class="card-desc">
-                    Cross-platform desktop app powered by a BIP38 library (supports both EC-multiply & non-EC-multiply modes).
-                  </p>
-                  <div class="card-tags">
-                    <span>BIP38 spec</span><span>Key encryption</span><span>Desktop UX</span><span>Cross-platform</span>
-                  </div>
-                  <div class="card-links">
-                    <a class="card-cta" href="https://github.com/talonlab/bip38-desktop" target="_blank" rel="noopener">Desktop app</a>
-                  </div>
-                </article>
+                    <!-- Openprofit -->
+                    <article class="card c-grey project-card">
+                        <div class="card-top"><span>03 — Backend Developer · Openprofit</span><span>Mar – Jun 2025</span></div>
+                        <h3 class="card-title">Openprofit Wallet API</h3>
+                        <div>
+                            <p class="card-desc">FastAPI services for multi-chain HD wallet creation, account derivation, transaction signing and balances on Supabase: realtime triggers, Row Level Security, JWT auth and storage. OpenAPI documented, 90%+ test coverage with Pytest.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">JWT / RLS</span><span class="chip">OpenAPI</span><span class="chip">Pytest 90%+</span>
+                            </div>
+                        </div>
+                        <div class="card-links"><span class="serial">#OPB-API</span><span class="serial">Private</span></div>
+                    </article>
 
+                    <!-- BIP38 Client -->
+                    <article class="card c-red project-card">
+                        <div class="card-top"><span>04 — Developer · Talon Lab</span><span>Desktop</span></div>
+                        <h3 class="card-title">BIP38 Client</h3>
+                        <div>
+                            <p class="card-desc">Cross-platform desktop client for BIP38 secure key management, supporting both No-EC-multiply and EC-multiply modes, with CI/CD and build automation scripts across platforms.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">BIP38</span><span class="chip">Python</span><span class="chip">Cross-platform</span><span class="chip">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <div class="links"><a class="btn outline-ink card-cta" href="https://github.com/talonlab/bip38-desktop" target="_blank" rel="noopener">Desktop app <svg class="arr"><use href="#i-arrow"/></svg></a></div>
+                            <span class="serial">#B38-EC</span>
+                        </div>
+                    </article>
 
-                <!-- Hospital Management System -->
-                <article class="project-card">
-                  <h3 class="card-title">Hospital Management System</h3>
-                  <p class="card-desc">
-                    Feature development and maintenance for Gotmeri PLC on a scalable Spring Boot codebase.
-                  </p>
-                  <div class="card-tags">
-                    <span>Spring services</span><span>Client delivery</span><span>Maintenance</span>
-                  </div>
-                </article>
+                    <!-- Hospital Management System -->
+                    <article class="card c-orange project-card">
+                        <div class="card-top"><span>05 — Desktop App Developer · Gotmeri PLC</span><span>Jan – Dec 2023</span></div>
+                        <h3 class="card-title">Hospital Mgmt System</h3>
+                        <div>
+                            <p class="card-desc">Developed and maintained features for a Hospital Management System in Java on Spring Boot, working with a team and directly with clients to gather requirements.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Client delivery</span>
+                            </div>
+                        </div>
+                        <div class="card-links"><span class="serial">#HMS-GTM</span><span class="serial">Addis Ababa</span></div>
+                    </article>
 
-                <!-- ClowRast – Personal -->
-                <article class="project-card">
-                  <h3 class="card-title">ClowRast (Personal)</h3>
-                  <p class="card-desc">
-                    I designed and wrote a C11 software rasterizer with perspective-correct texturing, z-buffering, and complex model loading—profiling for real-time performance.
-                  </p>
-                </article>
-              </div>
+                    <!-- ClowRast -->
+                    <article class="card c-green project-card span-3">
+                        <div class="card-top"><span>06 — Personal · 2020 – Present</span><span>C11</span></div>
+                        <h3 class="card-title">ClowRast — 3D Software Rasterizer</h3>
+                        <div>
+                            <p class="card-desc">Shader-based software rasterizer in C11 optimized for real-time 3D rendering: loads, parses and renders complex models, perspective-correct texture mapping and z-buffering, profiled and tested for cross-platform stability.</p>
+                            <div class="card-tags" style="margin-top:12px">
+                                <span class="chip">C11</span><span class="chip">Rasterizer</span><span class="chip">Z-buffer</span><span class="chip">Perspective-correct</span><span class="chip">Profiling</span>
+                            </div>
+                        </div>
+                        <div class="card-links"><span class="serial">#CLW-C11</span><span class="serial">Personal</span></div>
+                    </article>
+                </div>
             </section>
 
-
-
-
-            <!-- -------------- CONTACT BOX ---------------- -->
-
+            <!-- -------------- CONTACT ---------------- -->
             <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Get in touch</h1>
-                    <span>Do you have a project in your mind, contact me here</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="contact-info">
-                            <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-                            <p><i class="uil uil-envelope"></i> Email: itsm3abena@gmail.com</p>
-                            <p><i class="uil uil-phone"></i> Tel: +251 91 349 1283</p>
+                <header class="sec-head">
+                    <span class="idx">04</span>
+                    <h2>Get in touch</h2>
+                    <span class="meta">Have a project in mind?</span>
+                </header>
+
+                <div class="contact-grid">
+                    <article class="card c-red contact-info">
+                        <div class="card-top"><span>Find me</span><span>Sort before sending</span></div>
+                        <div class="lines">
+                            <div class="spec-row"><span class="k">Email</span><span class="tri"></span><span class="v"><a href="mailto:itsm3abena@gmail.com">itsm3abena@gmail.com</a></span></div>
+                            <div class="spec-row"><span class="k">Tel</span><span class="tri"></span><span class="v"><a href="tel:+251913491283">+251 913 491 283</a></span></div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-control">
+                        <div class="social_icons">
+                            <a class="icon" href="https://discord.com/users/itsm3abena" target="_blank" rel="noopener" aria-label="Discord"><i class="uil uil-discord"></i></a>
+                            <a class="icon" href="https://x.com/itsm3abena" target="_blank" rel="noopener" aria-label="X"><i class="uil uil-twitter"></i></a>
+                            <a class="icon" href="https://t.me/itsm3abena" target="_blank" rel="noopener" aria-label="Telegram"><i class="uil uil-telegram"></i></a>
+                            <a class="icon" href="https://github.com/itsm3abena" target="_blank" rel="noopener" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
+                            <a class="icon" href="https://www.linkedin.com/in/itsm3abena" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="card c-grey form-card">
+                        <form class="form-control" id="contactForm" novalidate>
                             <div class="form-inputs">
-                                <input type="text" class="input-field" placeholder="Name">
-                                <input type="text" class="input-field" placeholder="Email">
+                                <input type="text" name="name" class="input-field" placeholder="Name" autocomplete="name" required>
+                                <input type="email" name="email" class="input-field" placeholder="Email" autocomplete="email" required>
                             </div>
-                            <div class="text-area">
-                                <textarea placeholder="Message"></textarea>
-                            </div>
+                            <textarea name="message" placeholder="Message" required></textarea>
                             <div class="form-button">
-                                <button class="btn">Send <i class="uil uil-message"></i></button>
+                                <span class="hint">Opens your mail client</span>
+                                <button type="submit" class="btn ink">Send <svg class="arr"><use href="#i-arrow"/></svg></button>
                             </div>
-                        </div>
-                    </div>
+                        </form>
+                    </article>
                 </div>
             </section>
-
         </main>
 
 
@@ -269,62 +392,21 @@
         <footer>
             <div class="top-footer">
                 <p>Abenezer.L</p>
+                <span>© 2026 — All rights reserved</span>
             </div>
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer_menu_list">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="footer-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
             <div class="footer-social-icons">
-              <a class="icon" href="https://www.linkedin.com/in/itsm3abena" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="uil uil-linkedin-alt"></i>
-              </a>
-              <a class="icon" href="https://github.com/itsm3abena" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="uil uil-github-alt"></i>
-              </a>
-              <a class="icon" href="https://t.me/itsm3abena" target="_blank" rel="noopener" aria-label="Telegram">
-                <i class="uil uil-telegram-alt"></i>
-              </a>
+                <a class="icon" href="https://www.linkedin.com/in/itsm3abena" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                <a class="icon" href="https://github.com/itsm3abena" target="_blank" rel="noopener" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
+                <a class="icon" href="https://t.me/itsm3abena" target="_blank" rel="noopener" aria-label="Telegram"><i class="uil uil-telegram-alt"></i></a>
             </div>
-
         </footer>
-
     </div>
-
-    <script>
-        function addDownloadListener(buttonId, filePath, fileName) {
-            document.getElementById(buttonId).addEventListener('click', function() {
-                const link = document.createElement('a');
-                link.href = filePath;
-                link.download = fileName;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
-        }
-
-        addDownloadListener('downloadBtn', 'assets/files/Abenezer_Lulseged_CV.pdf');
-        addDownloadListener('downloadBtnHome', 'assets/files/Abenezer_Lulseged_CV.pdf');
-        addDownloadListener('downloadBtnAbout', 'assets/files/Abenezer_Lulseged_CV.pdf');
-    </script>
-
-
-    <!-- ----- TYPING JS Link ----- -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <!-- ----- SCROLL REVEAL JS Link----- -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
