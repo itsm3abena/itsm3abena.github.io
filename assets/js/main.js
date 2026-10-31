@@ -145,6 +145,77 @@
     }
 
     /* =================================================================
+       PROJECTS ARCHIVE — expand / collapse
+       ================================================================= */
+    (function () {
+        var btn = $('#moreBtn'), wrap = $('#projectsMore');
+        if (!btn || !wrap) return;
+        btn.addEventListener('click', function () {
+            var open = !wrap.classList.contains('open');
+            wrap.classList.toggle('open', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
+                /* reveal the archive cards even if the observer already saw them collapsed */
+                setTimeout(function () { $$('[data-reveal]', wrap).forEach(function (el) { el.classList.add('is-in'); }); }, 120);
+            } else {
+                btn.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+            }
+        });
+    })();
+
+    /* =================================================================
+       CV VIEWER
+       ================================================================= */
+    (function () {
+        var modal = $('#cvModal');
+        if (!modal) return;
+        var dialog = $('.cv-dialog', modal), frame = $('.cv-frame', modal), fallback = $('.cv-fallback', modal);
+        var closeBtn = $('.cv-close', modal), lastFocus = null, loaded = false;
+        var canInline = (typeof navigator.pdfViewerEnabled === 'boolean') ? navigator.pdfViewerEnabled : !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        function open() {
+            lastFocus = document.activeElement;
+            if (!loaded) {
+                if (canInline) { frame.src = frame.getAttribute('data-src'); }
+                else { frame.remove(); fallback.hidden = false; }
+                loaded = true;
+            }
+            modal.hidden = false;
+            document.body.classList.add('cv-open');
+            requestAnimationFrame(function () { requestAnimationFrame(function () { modal.classList.add('open'); }); });
+            setTimeout(function () { closeBtn.focus(); }, 60);
+            if (history.replaceState) history.replaceState(null, '', '#cv');
+        }
+        function close() {
+            modal.classList.remove('open');
+            document.body.classList.remove('cv-open');
+            setTimeout(function () { modal.hidden = true; }, 450);
+            if (history.replaceState && location.hash === '#cv') history.replaceState(null, '', location.pathname + location.search);
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        $$('[data-cv]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;   /* let "open in new tab" through */
+                e.preventDefault(); open();
+            });
+        });
+        $$('[data-cv-close]', modal).forEach(function (el) { el.addEventListener('click', close); });
+        document.addEventListener('keydown', function (e) {
+            if (modal.hidden) return;
+            if (e.key === 'Escape') { close(); return; }
+            if (e.key === 'Tab') {   /* keep focus inside the dialog */
+                var f = $$('a[href], button:not([disabled]), iframe', dialog);
+                if (!f.length) return;
+                var first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+        if (location.hash === '#cv') open();
+    })();
+
+    /* =================================================================
        HERO INTRO — "printing" the four labels
        ================================================================= */
     var bento = $('.bento');
